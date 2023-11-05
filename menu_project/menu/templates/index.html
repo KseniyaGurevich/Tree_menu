@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>MenuItems</title>
 </head>
+<style>
+p {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+   }
+.content {
+    max-width: 500px;
+    margin: auto;
+}
+</style>
 <body>
-
+{% load menu_tags %}
+    <div class="content">
+        {% for item in item_list %}
+                 {% if item.parent == None %}
+                           <p>{{item.name}}</p>
+                 {% endif %}
+        {% endfor %}
+    </div>
 </body>
 </html>

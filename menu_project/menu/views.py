@@ -1,5 +1,11 @@
-from django.views.generic import TemplateView
+from django.shortcuts import render
+from .models import MenuItem
 
 
-class IndexView(TemplateView):
-    template_name = "index.html"
+def index(request):
+    template = 'index.html'
+    item_list = MenuItem.objects.all()
+    context = {
+        'item_list': item_list,
+    }
+    return render(request, template, context)

@@ -1,0 +1,10 @@
+<ul>
+    {% for item in menu_items %}
+        <li>
+            <a href="{{ item.url }}">{{ item.name }}</a>
+            {% if current_level < item.level %}
+                {% draw_menu 'main_menu' current_level=item.level %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

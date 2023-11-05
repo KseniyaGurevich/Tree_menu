@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MenuItems</title>
+</head>
+<body>
 {% load menu_tags %}
-
 {% draw_menu 'main_menu' %}
+ПРИВЕТ!
+</body>
+</html>
+
+<a href="{% url 'posts:profile' post.author.username %}">{{item.name}}</a>
