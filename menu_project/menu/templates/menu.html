@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load menu_tags %}
+
+
+{% block content %}
+
+{{menu_data.items}}
+{{item_name}}
+
+{% draw_menu item.name %}
+
+result - {{ result }}
+
+
+{% endblock %}
+
+{% block content2 %}
+    <p><a href="{% url 'menu:index' %}" class="content">Все меню</a></p>
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head>
+<style>
+a {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+}
+.content {
+    max-width: 500px;
+    margin: auto;
+}
+.content_left {
+    max-width: 500px;
+    margin: 30px;
+}
+</style>
+<body>
+    <div class="content">
+    {% block content %}
+        Пусто!
+    {% endblock %}
+    </div>
+
+    <div class="content_left">
+    {% block content2 %}
+    {% endblock %}
+    </div>
+</body>
+</html>
