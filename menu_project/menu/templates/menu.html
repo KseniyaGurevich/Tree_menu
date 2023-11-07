@@ -5,19 +5,36 @@
 
 {% block content %}
 
-{{menu_data.items}}
-{{item_name}}
+  {% draw_menu item.name as menu_parents %}
+  <ul>
+    {% for parent in menu_parents reversed %}
+      <p><li>{{ parent }}</li></p>
+    {% endfor %}
+  </ul>
 
-{% draw_menu item.name %}
-
-result - {{ result }}
-
+  <ul>
+    <li>
+      <p>{{ item.name }}</p>
+      {% if item.children.count %}
+        <ul>
+          {% for child in item.children.all %}
+            <li><a href="{% url 'menu:item_detail' child.url %}">{{ child.name }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  </ul>
 
 {% endblock %}
 
-{% block content2 %}
-    <p><a href="{% url 'menu:index' %}" class="content">Все меню</a></p>
-{% endblock %}
+
+
+
+
+
+
+
+
 
 
 

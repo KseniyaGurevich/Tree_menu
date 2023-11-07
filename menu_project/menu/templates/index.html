@@ -1,9 +1,17 @@
 {% extends 'base.html' %}
+{% load menu_tags %}
 
 {% block content %}
-    {% for item in item_list %}
-        {% if item.parent is None%}
-            <p><a href="{% url 'menu:item_detail' item.url %}" class="content">{{ item.name }}</a></p>
-        {% endif %}
-    {% endfor %}
+
+<ul>
+  {% for item in item_list %}
+    {% if item.parent is None %}
+      <li>
+        <a href="{% url 'menu:item_detail' item.url %}">{{ item.name }}</a>
+      </li>
+
+    {% endif %}
+  {% endfor %}
+</ul>
+
 {% endblock %}
